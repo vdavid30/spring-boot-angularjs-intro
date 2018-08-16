@@ -11,7 +11,7 @@ import { TaskEditPageComponent } from './pages/task-edit-page/task-edit-page.com
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
+import { TodoService } from './services/todo.service';
 const ROUTES = [
   { path: '', component: HomePageComponent },
   { path: 'tasks', component: TaskListPageComponent },
@@ -19,21 +19,21 @@ const ROUTES = [
   { path: '**', component: PageNotFoundComponent }
 ]
 
+
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomePageComponent,
-    TaskListPageComponent,
-    TaskEditPageComponent,
-    PageNotFoundComponent
-  ],
-  imports: [
-    BrowserModule,
-    NgbModule.forRoot(),
-    RouterModule.forRoot(ROUTES),
-    ReactiveFormsModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+ declarations: [
+   AppComponent,
+   HomePageComponent,
+   TaskListPageComponent,
+   TaskEditPageComponent,
+   PageNotFoundComponent
+ ],
+ imports: [
+   BrowserModule,
+   NgbModule.forRoot(),
+   RouterModule.forRoot(ROUTES)
+ ],
+ providers: [TodoService],
+ bootstrap: [AppComponent]
 })
 export class AppModule { }
