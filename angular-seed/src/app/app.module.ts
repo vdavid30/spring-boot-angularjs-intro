@@ -20,20 +20,22 @@ const ROUTES = [
 ]
 
 
+
 @NgModule({
- declarations: [
-   AppComponent,
-   HomePageComponent,
-   TaskListPageComponent,
-   TaskEditPageComponent,
-   PageNotFoundComponent
- ],
- imports: [
-   BrowserModule,
-   NgbModule.forRoot(),
-   RouterModule.forRoot(ROUTES)
- ],
- providers: [TodoService],
- bootstrap: [AppComponent]
+  declarations: [
+    AppComponent,
+    HomePageComponent,
+    TaskListPageComponent,
+    TaskEditPageComponent,
+    PageNotFoundComponent
+  ],
+  imports: [
+    BrowserModule,
+    NgbModule.forRoot(),
+    RouterModule.forRoot(ROUTES),
+    ReactiveFormsModule
+  ],
+  providers: [TodoService],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
